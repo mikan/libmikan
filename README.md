@@ -1,6 +1,7 @@
 libmikan
 ========
 
+[![Build Status](https://travis-ci.org/mikan/libmikan.svg?branch=master)](https://travis-ci.org/mikan/libmikan)
 [![Go Report Card](https://goreportcard.com/badge/github.com/mikan/libmikan)](https://goreportcard.com/report/github.com/mikan/libmikan)
 [![Code Climate](https://codeclimate.com/github/mikan/libmikan/badges/gpa.svg)](https://codeclimate.com/github/mikan/libmikan)
 
