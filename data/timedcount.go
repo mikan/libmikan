@@ -38,13 +38,13 @@ func (c *MinuteHourCounter) Add(count int) {
 	c.hourCount += count
 }
 
-// MinuteCount returns number of events by recent a minute.
+// MinuteCount returns number of events of the last one minute.
 func (c *MinuteHourCounter) MinuteCount() int {
 	c.shiftOldEvents(time.Now())
 	return c.minuteCount
 }
 
-// HourCount returns number of events by recent a minute.
+// HourCount returns number of events of the last one hour.
 func (c *MinuteHourCounter) HourCount() int {
 	c.shiftOldEvents(time.Now())
 	return c.hourCount
@@ -63,7 +63,7 @@ func (c *MinuteHourCounter) shiftOldEvents(nowSecs time.Time) {
 		c.minuteEvents.Remove(front)
 	}
 
-	// 1時間以上経過した古いイベントを 'hourevents' から削除する
+	// 1時間以上経過した古いイベントを 'hourEvents' から削除する
 	for c.hourEvents.Len() > 0 && c.hourEvents.Front().Value.(*event).t.Before(hourAgo) {
 		c.hourCount -= c.hourEvents.Front().Value.(*event).count
 		c.hourEvents.Remove(c.hourEvents.Front())
