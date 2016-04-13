@@ -2,7 +2,9 @@
 
 package libmikan
 
+import "fmt"
+
 // License prints the license.
 func License() {
-	println("libmikan licensed under the DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE.")
+	fmt.Println("libmikan licensed under the DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE.")
 }
